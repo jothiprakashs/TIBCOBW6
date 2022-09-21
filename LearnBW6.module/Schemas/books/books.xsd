@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/books" xmlns:tns="http://www.example.org/books" elementFormDefault="qualified">
+    <complexType name="BooksComplexType">
+    	<sequence>
+    		<element name="BookId" type="int"></element>
+    		<element name="BookName" type="string"></element>
+    		<element name="Author" type="string"></element>
+    		<element name="Genre" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="StatusComplexType">
+    	<sequence>
+    		<element name="StatusCode" type="string"></element>
+    		<element name="StatusDesc" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="AddBooksRequestComplexType">
+    	<sequence>
+    		<element name="Books" type="tns:BooksComplexType" minOccurs="1" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="AddBooksResponseComplexType">
+    	<sequence>
+    		<element name="Status" type="tns:StatusComplexType" minOccurs="1" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="GetBooksRequestComplexType">
+    	<sequence>
+    		<element name="BookId" type="int" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="BookName" type="string" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="GetBooksResponseComplexType">
+    	<sequence>
+    		<element name="Status" type="tns:StatusComplexType" minOccurs="1" maxOccurs="1"></element>
+    		<element name="Books" type="tns:BooksComplexType" minOccurs="0" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="GetBooksRequest" type="tns:GetBooksRequestComplexType"></element>
+
+    <element name="GetBooksResponse" type="tns:GetBooksResponseComplexType"></element>
+
+    <element name="AddBooksRequest" type="tns:AddBooksRequestComplexType"></element>
+
+    <element name="AddBooksResponse" type="tns:AddBooksResponseComplexType"></element>
+</schema>

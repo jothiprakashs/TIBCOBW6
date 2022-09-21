@@ -1,0 +1,25 @@
+{
+    "records": [{
+        "name": "Cloud",
+        "items": [],
+        "url": "https://integration.cloud.tibco.com:443"
+    }],
+    "resources": [
+        {
+            "location": "Service Descriptors/learnbw6.module.rest.Books-Books.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/learnbw6.module.rest.Books_old-Books.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/learnbw6.module.rest.books-books.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/learnbw6.module.books-books.json",
+            "type": "generated"
+        }
+    ]
+}

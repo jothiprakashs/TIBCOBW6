@@ -1,0 +1,12 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/LearnBW6.module/Service Descriptors/learnbw6.module.rest.books-books.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/books"
+    },
+    {
+        "jsonSchemaLocation": "/LearnBW6.module/Service Descriptors/learnbw6.module.books-books.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/books"
+    }
+]}

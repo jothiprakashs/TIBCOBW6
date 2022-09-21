@@ -1,0 +1,125 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Summary about the new REST service.",
+    "description" : "Summary about the new REST service."
+  },
+  "host" : "localhost:8081",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/books" : {
+      "post" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "post-books",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/AddBooksRequest"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a AddBooksResponse to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/AddBooksResponse"
+            }
+          }
+        }
+      },
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "get-books",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a GetBooksResponse to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/GetBooksResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Status" : {
+      "type" : "object",
+      "required" : [ "StatusDesc", "StatusCode" ],
+      "properties" : {
+        "StatusCode" : {
+          "type" : "string"
+        },
+        "StatusDesc" : {
+          "type" : "string"
+        }
+      }
+    },
+    "AddBooksResponse" : {
+      "type" : "object",
+      "required" : [ "Status" ],
+      "properties" : {
+        "Status" : {
+          "$ref" : "#/definitions/Status"
+        }
+      }
+    },
+    "AddBooksRequest" : {
+      "type" : "object",
+      "required" : [ "Books" ],
+      "properties" : {
+        "Books" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Books",
+            "uniqueItems" : false
+          }
+        }
+      }
+    },
+    "GetBooksResponse" : {
+      "type" : "object",
+      "required" : [ "Status" ],
+      "properties" : {
+        "Status" : {
+          "$ref" : "#/definitions/Status"
+        },
+        "Books" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Books",
+            "uniqueItems" : false
+          }
+        }
+      }
+    },
+    "Books" : {
+      "type" : "object",
+      "required" : [ "BookId", "BookName", "Author", "Genre" ],
+      "properties" : {
+        "BookId" : {
+          "type" : "integer"
+        },
+        "BookName" : {
+          "type" : "string"
+        },
+        "Author" : {
+          "type" : "string"
+        },
+        "Genre" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
